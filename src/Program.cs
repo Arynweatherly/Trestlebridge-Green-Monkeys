@@ -27,6 +27,7 @@ namespace Trestlebridge
 
             Farm Trestlebridge = new Farm();
 
+
             while (true)
             {
                 DisplayBanner();
@@ -55,6 +56,8 @@ namespace Trestlebridge
                 {
                     DisplayBanner();
                     Console.WriteLine(Trestlebridge);
+
+                    Console.WriteLine();
                     Console.WriteLine("\n\n\n");
                     Console.WriteLine("Press return key to go back to main menu.");
                     Console.ReadLine();

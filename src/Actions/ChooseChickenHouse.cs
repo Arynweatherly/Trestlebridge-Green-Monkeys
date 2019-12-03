@@ -8,15 +8,15 @@ using Trestlebridge.Models.Animals;
 
 namespace Trestlebridge.Actions
 {
-    public class ChooseGrazingField
+    public class ChooseChickenHouse
     {
-        public static void CollectInput(Farm farm, IGrazing animal)
+        public static void CollectInput(Farm farm, IChicken animal)
         {
             Utils.Clear();
 
-            for (int i = 0; i < farm.GrazingFields.Count; i++)
+            for (int i = 0; i < farm.ChickenHouses.Count; i++)
             {
-                Console.WriteLine($"{i + 1}. Grazing Field {farm.GrazingFields[i].Capacity}");
+                Console.WriteLine($"{i + 1}. Chicken House {farm.ChickenHouses[i].Capacity}");
             }
 
             Console.WriteLine();
@@ -28,15 +28,17 @@ namespace Trestlebridge.Actions
             Console.Write("> ");
             int choice = Int32.Parse(Console.ReadLine());
             choice--;
-            if (farm.GrazingFields[choice].Capacity < farm.GrazingFields[choice].MaxCapacity)
+            if (farm.ChickenHouses[choice].Capacity < farm.ChickenHouses[choice].MaxCapacity)
             {
-                farm.GrazingFields[choice].AddResource(animal);
+                farm.ChickenHouses[choice].AddResource(animal);
+                Console.WriteLine("Hit enter to return to main menu.");
+                Console.ReadLine();
             }
             else
             {
-                Console.WriteLine("Too many animals in this field. Pick a different field.");
+                Console.WriteLine("Too many chickens in this house. Pick a different house.");
                 Console.ReadLine();
-                Console.WriteLine("Hit enter to return to main menu.");
+
             }
 
             /*

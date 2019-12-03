@@ -7,7 +7,9 @@ namespace Trestlebridge.Models.Facilities
 {
     public class ChickenHouse : IFacility<IChicken>
     {
-        private int _capacity = 50;
+        private int _capacity = 13;
+        private int _maxCapacity = 15;
+
         private Guid _id = Guid.NewGuid();
 
         private List<IChicken> _animals = new List<IChicken>();
@@ -19,11 +21,24 @@ namespace Trestlebridge.Models.Facilities
                 return _capacity;
             }
         }
+        public double MaxCapacity
+        {
+            get
+            {
+                return _maxCapacity;
+            }
+        }
 
         public void AddResource(IChicken animal)
         {
             _animals.Add(animal);
+            _capacity++;
+            Console.WriteLine("Yayyyy you purchased a chicken!! What what!!??");
+            Console.WriteLine("Hit Enter again to return to the main menu");
+            Console.ReadLine();
         }
+
+
 
         public void AddResource(List<IChicken> animals)
         {

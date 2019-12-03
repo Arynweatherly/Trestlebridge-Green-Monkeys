@@ -7,7 +7,9 @@ namespace Trestlebridge.Models.Facilities
 {
     public class DuckHouse : IFacility<IDuck>
     {
-        private int _capacity = 50;
+        private int _capacity = 0;
+        private int _maxCapacity = 12;
+
         private Guid _id = Guid.NewGuid();
 
         private List<IDuck> _animals = new List<IDuck>();
@@ -19,11 +21,18 @@ namespace Trestlebridge.Models.Facilities
                 return _capacity;
             }
         }
+        public double MaxCapacity
+        {
+            get
+            {
+                return _maxCapacity;
+            }
+        }
 
         public void AddResource(IDuck animal)
         {
-            // TODO: implement this...
-            throw new NotImplementedException();
+            _animals.Add(animal);
+            _capacity++;
         }
 
         public void AddResource(List<IDuck> animals)

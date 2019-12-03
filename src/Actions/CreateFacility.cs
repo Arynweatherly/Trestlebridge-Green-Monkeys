@@ -22,18 +22,10 @@ namespace Trestlebridge.Actions
             {
                 case 1:
                     farm.AddGrazingField(new GrazingField());
-                    Console.WriteLine("You have created a grazing field!");
-                    Console.WriteLine("Hit Enter again to return to the main menu");
-                    Console.ReadLine();
                     break;
                 default:
                     break;
             }
-        }
-
-        private static void CollectInput()
-        {
-            throw new NotImplementedException();
         }
     }
 }

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using Trestlebridge.Interfaces;
 using Trestlebridge.Models;
@@ -14,18 +15,28 @@ namespace Trestlebridge.Actions
 
             for (int i = 0; i < farm.GrazingFields.Count; i++)
             {
-                Console.WriteLine($"{i + 1}. Grazing Field");
+                Console.WriteLine($"{i + 1}. Grazing Field {farm.GrazingFields[i].Capacity}");
             }
 
             Console.WriteLine();
 
             // How can I output the type of animal chosen here?
             Console.WriteLine($"Place the animal where?");
+            Console.WriteLine();
 
             Console.Write("> ");
             int choice = Int32.Parse(Console.ReadLine());
-
-            farm.GrazingFields[choice].AddResource(animal);
+            choice--;
+            if (farm.GrazingFields[choice].Capacity < farm.GrazingFields[choice].MaxCapacity)
+            {
+                farm.GrazingFields[choice].AddResource(animal);
+            }
+            else
+            {
+                Console.WriteLine("Too many animals in this field. Pick a different field.");
+                Console.ReadLine();
+                Console.WriteLine("Hit enter to return to main menu.");
+            }
 
             /*
                 Couldn't get this to work. Can you?

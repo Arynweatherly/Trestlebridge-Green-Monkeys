@@ -34,7 +34,6 @@ namespace Trestlebridge.Actions
         }
         public static void ChosenFacility(int option, IChicken animal, List<ChickenHouse> availableChickenHouseList)
         {
-
             availableChickenHouseList[option].AddResource(animal);
         }
 

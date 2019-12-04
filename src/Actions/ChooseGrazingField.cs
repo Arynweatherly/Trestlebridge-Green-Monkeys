@@ -35,8 +35,9 @@ namespace Trestlebridge.Actions
             else
             {
                 Console.WriteLine("Too many animals in this field. Pick a different field.");
-                Console.ReadLine();
-                Console.WriteLine("Hit enter to return to main menu.");
+                int secondChoice = Int32.Parse(Console.ReadLine());
+                secondChoice--;
+                farm.GrazingFields[secondChoice].AddResource(animal);
             }
 
             /*

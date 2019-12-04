@@ -37,7 +37,9 @@ namespace Trestlebridge.Actions
             else
             {
                 Console.WriteLine("Too many ducks in this house. Pick a different house.");
-                Console.ReadLine();
+                int secondChoice = Int32.Parse(Console.ReadLine());
+                secondChoice--;
+                farm.DuckHouses[secondChoice].AddResource(animal);
 
             }
 

@@ -7,7 +7,7 @@ namespace Trestlebridge.Models.Facilities
 {
     public class GrazingField : IFacility<IGrazing>
     {
-        private int _capacity = 19;
+        private int _capacity = 0;
         private int _maxCapacity = 20;
         private Guid _id = Guid.NewGuid();
 

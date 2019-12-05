@@ -17,17 +17,17 @@ namespace Trestlebridge.Models.Animals
             }
         }
 
-        public double FeedPerDay { get; set; } = 0.9;
+        public double FeedPerDay { get; set; } = 0.8;
         public string Type { get; } = "Duck";
-        public int FeedLevel { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int FeedLevel { get =>
+                throw new NotImplementedException(); set =>
+                throw new NotImplementedException(); }
 
         // Methods
         public void Graze()
         {
             Console.WriteLine($"Duck {this._shortId} just ate {this.FeedPerDay}kg of feed");
         }
-
-
 
         public override string ToString()
         {

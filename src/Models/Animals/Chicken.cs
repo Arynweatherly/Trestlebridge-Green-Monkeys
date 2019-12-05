@@ -8,7 +8,7 @@ namespace Trestlebridge.Models.Animals
     {
 
         private Guid _id = Guid.NewGuid();
-        private double _meatProduced = 18.25;
+        private double _meatProduced = 1.7;
 
         private string _shortId
         {
@@ -20,7 +20,9 @@ namespace Trestlebridge.Models.Animals
 
         public double FeedPerDay { get; set; } = 0.9;
         public string Type { get; } = "Chicken";
-        public int FeedLevel { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int FeedLevel { get =>
+                throw new NotImplementedException(); set =>
+                throw new NotImplementedException(); }
 
         // Methods
         public void Graze()

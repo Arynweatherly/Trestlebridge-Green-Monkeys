@@ -8,7 +8,7 @@ namespace Trestlebridge.Models.Facilities
     public class ChickenHouse : IFacility<IChicken>
     {
         private int _capacity = 0;
-        private int _maxCapacity = 1;
+        private int _maxCapacity = 15;
 
         private Guid _id = Guid.NewGuid();
 

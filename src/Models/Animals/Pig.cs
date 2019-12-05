@@ -8,7 +8,7 @@ namespace Trestlebridge.Models.Animals
     {
 
         private Guid _id = Guid.NewGuid();
-        private double _meatProduced = 18.25;
+        private double _meatProduced = 8.4;
 
         private string _shortId
         {
@@ -18,7 +18,7 @@ namespace Trestlebridge.Models.Animals
             }
         }
 
-        public double GrassPerDay { get; set; } = 5.4;
+        public double GrassPerDay { get; set; } = 3.2;
         public string Type { get; } = "Pig";
 
         // Methods
@@ -34,7 +34,7 @@ namespace Trestlebridge.Models.Animals
 
         public override string ToString()
         {
-            return $"Pig{this._shortId}. Oink!";
+            return $"Pig {this._shortId}. Oink!";
         }
     }
 }
